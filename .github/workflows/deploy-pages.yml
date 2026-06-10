@@ -31,7 +31,8 @@ jobs:
       - name: Install dependencies
         env:
           NODE_ENV: development
-        run: npm ci --include=dev --no-audit --no-fund || (npm cache clean --force && npm install --include=dev --no-audit --no-fund)
+          NPM_CONFIG_LEGACY_PEER_DEPS: true
+        run: npm ci --include=dev --no-audit --no-fund || (npm cache clean --force && npm install --include=dev --legacy-peer-deps --no-audit --no-fund)
 
       - name: Build app
         env:

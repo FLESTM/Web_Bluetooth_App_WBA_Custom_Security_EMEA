@@ -37,7 +37,7 @@ jobs:
         env:
           CI: false
           PUBLIC_URL: /Web_Bluetooth_App_WBA_Custom_Security_EMEA
-        run: npm run build
+        run: npx --yes react-app-rewired build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

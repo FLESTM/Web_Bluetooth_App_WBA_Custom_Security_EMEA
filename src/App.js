@@ -40,6 +40,11 @@ import bootstrap from 'bootstrap';
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Route, Link, Routes, useNavigate } from "react-router-dom";
 
+const SMP_SERVICE_UUID = "8d53dc1d-1db7-4cd3-868b-8a527460aa84";
+const SMP_CHARACTERISTIC_UUID = "da2e7828-fbce-4e01-ae9e-261174997c48";
+
+const normalizeUuid = (uuid) => (uuid || '').toLowerCase().replace(/-/g, '');
+
 const AppInner = () => {
   const [allServices, setAllServices] = useState([]);
   const [allCharacteristics, setAllCharacteristics] = useState([]);
@@ -48,16 +53,22 @@ const AppInner = () => {
 
   let listItems = [];
 
+  const hasSMPService = allServices.some(
+    (service) => normalizeUuid(service.service.uuid) === normalizeUuid(SMP_SERVICE_UUID)
+  );
+
+  const hasSMPCharacteristic = allCharacteristics.some(
+    (entry) => normalizeUuid(entry.characteristic.uuid) === normalizeUuid(SMP_CHARACTERISTIC_UUID)
+  );
+
+  const hasSMP = hasSMPService || hasSMPCharacteristic;
+
   // <-- NOUVEAU useEffect : redirige vers SMP si le service est présent
   useEffect(() => {
-    const hasSMP = allServices.some(
-      service => service.service.uuid === "8d53dc1d-1db7-4cd3-868b-8a527460aa84"
-    );
-
     if (hasSMP && !isDisconnected) {
       navigate("/SMP");
     }
-  }, [allServices, isDisconnected, navigate]);
+  }, [hasSMP, isDisconnected, navigate]);
   // --> FIN nouveau useEffect
 
   allServices.map(service => {
@@ -103,9 +114,6 @@ const AppInner = () => {
     if(service.service.uuid === "0000f11a-cc7a-482a-984a-7f2ed5b3e58f"){
       listItems.push(<li className="liProfile"><Link to="/FC">Fan Project</Link></li>);
     }
-    if(service.service.uuid === "8d53dc1d-1db7-4cd3-868b-8a527460aa84"){
-      listItems.push(<li className="liProfile"><Link to="/SMP">Simple Management Protocol</Link></li>);
-    }
     if(service.service.uuid === "00001840-0000-1000-8000-00805f9b34fb"){
       if(service.device.name.startsWith("ECG_"))
         listItems.push(<li className="liProfile"><Link to="/Electrocardiogram">Electrocardiogram</Link></li>);
@@ -116,6 +124,10 @@ const AppInner = () => {
       listItems.push(<li className="liProfile"><Link to="/HUB_DYN">BLE HUB Zigbee</Link></li>);
     }
   });
+
+  if (hasSMP) {
+    listItems.push(<li className="liProfile"><Link to="/SMP">Simple Management Protocol</Link></li>);
+  }
 
   return (
     <div>

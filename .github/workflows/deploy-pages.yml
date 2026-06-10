@@ -29,6 +29,8 @@ jobs:
         run: npm ci
 
       - name: Build app
+        env:
+          PUBLIC_URL: /Web_Bluetooth_App_WBA_Custom_Security_EMEA
         run: npm run build
 
       - name: Setup Pages

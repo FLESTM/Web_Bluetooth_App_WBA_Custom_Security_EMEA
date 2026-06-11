@@ -26,8 +26,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22
+          node-version: 20
           cache: npm
+
+      - name: Pin npm version (CI workaround)
+        run: |
+          npm install -g npm@10.8.2
+          npm --version
 
       - name: Install dependencies
         timeout-minutes: 20
@@ -36,7 +41,6 @@ jobs:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
           NPM_CONFIG_PROGRESS: false
         run: |
-          npm --version
           npm ci --include=dev --legacy-peer-deps --no-audit --no-fund || (npm cache verify && npm ci --include=dev --legacy-peer-deps --no-audit --no-fund)
 
       - name: Build app

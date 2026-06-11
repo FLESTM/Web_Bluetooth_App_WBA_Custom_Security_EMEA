@@ -17,6 +17,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
 
     steps:
       - name: Checkout repository
@@ -28,12 +29,13 @@ jobs:
           node-version: 24
 
       - name: Install dependencies
+        timeout-minutes: 20
         env:
           NODE_ENV: development
           NPM_CONFIG_LEGACY_PEER_DEPS: true
+          NPM_CONFIG_PROGRESS: false
         run: |
-          npm install -g npm@latest
-          npm install --include=dev --legacy-peer-deps --no-audit --no-fund
+          npm ci --include=dev --legacy-peer-deps --no-audit --no-fund || npm install --include=dev --legacy-peer-deps --no-audit --no-fund
 
       - name: Build app
         env:

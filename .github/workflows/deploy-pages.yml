@@ -18,6 +18,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -54,4 +57,5 @@ jobs:
           path: build
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

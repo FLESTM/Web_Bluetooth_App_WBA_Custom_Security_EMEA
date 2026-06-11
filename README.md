@@ -2,7 +2,7 @@
 
 Two github pages hosting the web app are available:
 -   [Web Bluetooth® **HOME PAGE**](https://applible.github.io/ST-Web-Bluetooth/ "https://applible.github.io/ST-Web-Bluetooth/").
--   [Web Bluetooth® **STM32WB**](https://AppliBLE.github.io/Web_Bluetooth_App_WB "https://AppliBLE.github.io/Web_Bluetooth_App_WB").
+-   [Web Bluetooth® **STM32WB**](. ".").
   
 No installation is required to use it this way.
 
@@ -63,7 +63,7 @@ Example with the [NUCLEO-WBA5x](https://www.st.com/en/evaluation-tools/nucleo-wb
 ### **Follow the next steps to learn how to use the application P2P Server**
 
 **Step 1.** Power on the STM32WBA board with the P2P Server application flashed in and activate the bluetooth® on your machine.   
-**Step 2.** Open [this](https://applible.github.io/Web_Bluetooth_App_WBA "https://applible.github.io/Web_Bluetooth_App_WBA") web page in your browser.  
+**Step 2.** Open [this](. ".") web page in your browser.  
 **Step 3.** Click on the connect button then select P2PS_WBAxx in the device list and click pair.   
 ![Step 3](/public/illustrations/Connection_popup.png "Step 3")  
 **Step 4.** Click on P2P Server to show the interface and **don't hesitate to read the tooltips**.  
@@ -92,7 +92,7 @@ BLE_HeartRate_ota or BLE_p2pServer_ota application is loaded at the memory addre
 
 ### **Follow the next steps to learn how to use the application Firmware Update Over The Air.**  
 **Step 1.** Power on the STM32WBA board with the Ota application flashed in and activate the bluetooth® on your machine.   
-**Step 2.** Open [this](https://applible.github.io/Web_Bluetooth_App_WBA "https://applible.github.io/Web_Bluetooth_App") web page in your browser.  
+**Step 2.** Open [this](. ".") web page in your browser.  
 **Step 3.** Click on the connect button then select your device list and click pair.  
 *You are now connected*  
 **Step 4.** Choose between updating the User Configuration Data and the Application.  
@@ -120,7 +120,7 @@ Example with the [NUCLEO-WBA5x](https://www.st.com/en/evaluation-tools/nucleo-wb
 ### **Follow the next steps to learn how to use the application HeartRate**
 
 **Step 1.** Power on the STM32WBA board with the HeartRate application flashed in and activate the bluetooth® on your machine.   
-**Step 2.** Open [this](https://applible.github.io/Web_Bluetooth_App_WBA "https://applible.github.io/Web_Bluetooth_App_WBA") web page in your browser.  
+**Step 2.** Open [this](. ".") web page in your browser.  
 **Step 3.** Click on the connect button then select HRSTM in the device list and click pair.  
 *You are now connected*  
 **Step 4.** Click on HeartRate to show the interface and **don't hesitate to read the tooltips**.  
@@ -145,7 +145,7 @@ Example with the [NUCLEO-WBA5x](https://www.st.com/en/evaluation-tools/nucleo-wb
 ### **Follow the next steps to learn how to use the application Data Throughput**
 
 **Step 1.** Power on the STM32WBA board with the Data Throughput application flashed in and activate the bluetooth® on your machine.   
-**Step 2.** Open [this](https://applible.github.io/Web_Bluetooth_App_WBA/ "https://applible.github.io/Web_Bluetooth_App_WBA") web page in your browser.  
+**Step 2.** Open [this](. ".") web page in your browser.  
 **Step 3.** Click on the connect button then select DT_SERVER in the device list and click pair.  
 *You are now connected*  
 **Step 4.** Click on Data Throughput to show the interface and **don't hesitate to read the tooltips**.  
@@ -172,7 +172,7 @@ You need a P2P Router running on a STM32WBA5x and at least another STM32WBAxx / 
 
 **Step 1.** Power the board with the P2P Router application flash and the others boards running the P2P Server apps.\
 **Step 2.** Activate the bluetooth® on your machine.   
-**Step 3.** Open [this](https://applible.github.io/Web_Bluetooth_App/ "https://applible.github.io/Web_Bluetooth_App") web page in your browser.  
+**Step 3.** Open [this](. ".") web page in your browser.  
 **Step 4.** Click on the connect button then select P2PR_WBAxx in the device list and click pair.  
 *You are now connected*  
 **Step 5.** Click on P2P Router to show the interface and click the Start button.
@@ -206,7 +206,7 @@ Example with the [NUCLEO-WBA5x](https://www.st.com/en/evaluation-tools/nucleo-wb
 ### **Follow the next steps to learn how to use the application Health Thermometer**
 
 **Step 1.** Power on the STM32WBA board with the Health Thermometer application flashed in and activate the bluetooth® on your machine.   
-**Step 2.** Open [this](https://applible.github.io/Web_Bluetooth_App_WBA/ "https://applible.github.io/Web_Bluetooth_App_WBA") web page in your browser.  
+**Step 2.** Open [this](. ".") web page in your browser.  
 **Step 3.** Click on the connect button then select HT_xx in the device list and click pair.  
 *You are now connected*  
 **Step 4.** Click on Health Thermometer to show the interface. 

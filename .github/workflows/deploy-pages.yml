@@ -26,7 +26,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 24
+          node-version: 22
+          cache: npm
 
       - name: Install dependencies
         timeout-minutes: 20
@@ -35,7 +36,8 @@ jobs:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
           NPM_CONFIG_PROGRESS: false
         run: |
-          npm ci --include=dev --legacy-peer-deps --no-audit --no-fund || npm install --include=dev --legacy-peer-deps --no-audit --no-fund
+          npm --version
+          npm ci --include=dev --legacy-peer-deps --no-audit --no-fund || (npm cache verify && npm ci --include=dev --legacy-peer-deps --no-audit --no-fund)
 
       - name: Build app
         env:

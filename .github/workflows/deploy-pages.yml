@@ -38,6 +38,8 @@ jobs:
         timeout-minutes: 20
         env:
           NODE_ENV: development
+          NPM_CONFIG_PRODUCTION: false
+          NPM_CONFIG_INCLUDE: dev
           NPM_CONFIG_LEGACY_PEER_DEPS: true
           NPM_CONFIG_PROGRESS: false
         run: |
@@ -47,7 +49,9 @@ jobs:
         env:
           CI: false
           PUBLIC_URL: /Web_Bluetooth_App_WBA_Custom_Security_EMEA
-        run: npx --yes react-app-rewired build
+        run: |
+          test -x node_modules/.bin/react-app-rewired || npm install --no-save --legacy-peer-deps react-app-rewired@2.2.1
+          npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
